@@ -211,4 +211,4 @@ while 1:
         
 
 
-    nw(seq1, seq2) # <--- retonar na função nw, main
+    nw(seq1, seq2) 
