@@ -9,6 +9,8 @@ DISCENTE: WELINGTON GONÇALVES SILVA - (E.C.A - UNIFEI - UNIVERSIDADE FEDERAL DE
 '''
 #------------------------------------------------------------------------------------------------------------------
 import numpy as np
+#from Bio.SubsMat import MatrixInfo as matrizesSubs #importação da matriz blosum62, se assim for preferível
+#blosum62 =  matrizesSubs.blosum62  
 
 #entrada do usuário, se necessário e casos de validação de entrada
 while 1:
@@ -44,8 +46,9 @@ while 1:
     '''
 
     #pontuações
-    score ={'MATCH': +1,'MISMATCH': 0, 'GAP': 0} 
-
+    score = {'MATCH': +1,'MISMATCH': 0, 'GAP': 0} 
+    
+    #importação explícita da matriz blosum62, mas poderia ser por biblioteca mesmo (BioPython)
     blosum62 = {
         ('W', 'F'): 1, ('L', 'R'): -2, ('S', 'P'): -1, ('V', 'T'): 0,
         ('Q', 'Q'): 5, ('N', 'A'): -2, ('Z', 'Y'): -2, ('W', 'R'): -3,
@@ -117,11 +120,11 @@ while 1:
         ('F', 'D'): -3, ('X', 'Y'): -1, ('Z', 'R'): 0, ('F', 'H'): -1,
         ('B', 'F'): -3, ('F', 'L'): 0, ('X', 'Q'): -1, ('B', 'B'): 4
     }
-
+    
     #função match
     def match(a, b): 
         if a == b and blosum62.__contains__((a, b)):  
-            return blosum62[a, b] 
+            return blosum62[a, b]
             # return score['MATCH'] + blosum62[a, b]     # <--- pode estar errado esse primeiro IF, eu pensei que deveria ser isso  
         if a == '-' or b == '-':
             return score['GAP']
@@ -200,7 +203,8 @@ while 1:
                 similarity += 1
             else: 
                 seqscore += match(a1, a2)
-
+                
+        #impressôes
         print('Score/Pontuação = ', seqscore)
         
         similarity = similarity/seqN * 100
