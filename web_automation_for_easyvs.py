@@ -65,8 +65,10 @@ tela = TelaPython()
 tela.Iniciar() '''
 
 messagebox.showwarning('ATENÇÃO!', 'Seu computador será controlado automaticamente a partir de agora. Aguarde a finalização. Clique em OK.')
-driver = webdriver.Chrome(r"C:\automation\chromedriver")
 
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+''' AQUI abaixo o usuário altera o diretório/caminho do executável 'chromedriver' '''
+driver = webdriver.Chrome(r'C:\automation\chromedriver') # <--------diretório do chromedriver.exe no seu computador
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 '''
 AQUI o usuário altera os parâmetros para rodar o script. Todos os parâmetros dizem respeito às opções a se marcar/preencher no EasyVS. (1 = sim, 0 = não)
