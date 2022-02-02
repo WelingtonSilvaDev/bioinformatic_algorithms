@@ -15,7 +15,7 @@
                                                                                                                                                                        '''
 '''
 Este script foi pensado para Windows. Caso alguém interessar, pode adaptá-lo para Linux.
-Última atualização feita em: 31-01-2022
+Última atualização feita em: 02-02-2022
 
 '''
 '''
