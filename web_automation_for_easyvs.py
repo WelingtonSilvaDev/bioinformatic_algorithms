@@ -149,7 +149,7 @@ if heteroatoms:
 #next step
 buttonnext = driver.find_element(By.XPATH,'//*[@id="pdb_form"]/div[4]/div/div/button')
 buttonnext.click()
-time.sleep(15)
+time.sleep(25)
 
 #STEP2
 #Advanced Docking Parameters (adp)
