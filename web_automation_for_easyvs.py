@@ -22,6 +22,8 @@ Este script foi pensado para Windows. Caso alguém interessar, pode adaptá-lo p
 Caso vc não tenha instalado o pacote PySimpleGUI, vá até
 o prompt de comando e use (win): 
 pip install PySimpleGUI
+
+Certifique-se de ter o chromedriver instalado no seu pc: https://chromedriver.chromium.org/downloads
 '''
 import sys
 from asyncio.base_futures import _FINISHED
@@ -66,9 +68,11 @@ tela.Iniciar() '''
 
 messagebox.showwarning('ATENÇÃO!', 'Seu computador será controlado automaticamente a partir de agora. Aguarde a finalização. Clique em OK.')
 
-#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 ''' AQUI abaixo o usuário altera o diretório/caminho do executável 'chromedriver' '''
+
 driver = webdriver.Chrome(r'C:\automation\chromedriver') # <--------diretório do chromedriver.exe no seu computador
+
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 '''
 AQUI o usuário altera os parâmetros para rodar o script. Todos os parâmetros dizem respeito às opções a se marcar/preencher no EasyVS. (1 = sim, 0 = não)
@@ -149,7 +153,7 @@ if heteroatoms:
 #next step
 buttonnext = driver.find_element(By.XPATH,'//*[@id="pdb_form"]/div[4]/div/div/button')
 buttonnext.click()
-time.sleep(25)
+time.sleep(20)
 
 #STEP2
 #Advanced Docking Parameters (adp)
@@ -198,7 +202,7 @@ def excel():
     pa.write('excel')
     time.sleep(1)
     pa.press('enter')
-    time.sleep(5)
+    time.sleep(8)
     pa.hotkey('ctrl', 'n')
     time.sleep(0.7)
     pa.press('enter')
@@ -227,5 +231,3 @@ excel()
 
 
 sys.exit() #fim de codigo (pode remover se colocá-lo o fim do codigo)
-
-
